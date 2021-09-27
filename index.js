@@ -1,5 +1,10 @@
 const axios = require('axios')
 
-axiosapp.get('http://jsonplaceholder.typicode.com/todos', (req, res) => {
-    
-});
+axios.get('http://jsonplaceholder.typicode.com/todos')
+.then((response) => {
+    for (let todo of response.data) {
+        console.log(todo.title);        
+    }
+}).catch((err) => {
+    console.log(err);
+    })
